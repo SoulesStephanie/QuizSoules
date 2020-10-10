@@ -1,0 +1,10 @@
+const quizContainer = document.getElementByID('quiz');
+const scoreContainer = document.getElementById('score');
+const timeContainer = document.getElementById('timer')
+const beginbutton = document.getElementById('highscores');
+const scoreBoardLink = document.getElementById('answers');
+var answercontainer = document.getElementById('answers');
+var answerButtons = document.getElementsById('button-answer');
+var questionCounter= 0;
+var userScore = 0;
+var questionNumber = 0;
