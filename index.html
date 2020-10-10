@@ -1,21 +1,35 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge"
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
     <link rel="stylesheet" href="style.css">
-    <title>Random Quiz</title>
+
+    <title>Quiz</title>
 </head>
 
-
 <body>
-    
+    <div class="container">
+        <div class="row">
+            <div id="highscores"><span class="link-highscore">High Scores</span></div>
+            <div id="timer">Time: 90</div>
+        </div>
+    </div>
+    <div class="container">
+        <div id="quiz">
+            <p> Wondering how you got here?! Well you are here so might as well take 90 seconds to answer SIX random questions! Every wrong answer will cost you 15 seconds or 1/4 of a minute. Your score is your time leftover.
+                Press START for the excitement to begin!</p>
+        </div>
+        <div id="score"></div>
+        <button id="begin" class="btn">Start</button>
+    </div>
 
-
-
-   
+    <script src="./script.js"></script>
+    </script>
 </body>
+
 </html>
