@@ -15,14 +15,14 @@ var interval;
 var scoreBoard = [];
 constmyQuestions = [
     {
-Question: "Who said Toto, I've got a feeling we're not in Kansas anymore?",
-answers: {
-         A: "Donald Trump",
-        B: "Dorthy",
-        C: "Auntie Em"
+        Question: "Who said Toto, I've got a feeling we're not in Kansas anymore?",
+        answers: {
+            A: "Donald Trump",
+            B: "Dorthy",
+            C: "Auntie Em"
         D: "Glenda the Good Witch of the South"
-},
-    correctAnswer: "B"
+        },
+        correctAnswer: "B"
     },
     {
         Question: "Who is Jerry Seinfeld's favorite superhero?",
@@ -73,4 +73,39 @@ answers: {
             D: "450"
         },
         correctAnswer: "A"
-    },
+    }
+];
+function generateScoreBoard() {
+    quizContainer.innerHTML = "<h1>High Scores</h1><br>";   			
+    var scoreboardTemp = JSON.parse(localStorage.getItem("scoreboard"));
+    var playAgainBtn = [];
+    playAgainBtn.push(`<br>
+    <label>
+    <button id="play-again">Play Again?
+    </button>
+    <button id="reset-score">Reset Scoreboard?
+    </button>
+    </label>`)
+    var ol = document.createElement("ol")
+    if (scoreboardTemp !== null) {
+        for (var i = 0; i < scoreboardTemp.length; i++) {
+        
+            console.log(scoreboardTemp)
+            var li = document.createElement("li");
+            li.textContent = scoreboardTemp[i].username + " - " + scoreboardTemp[i].score;
+            li.setAttribute("data-index", i);
+
+            ol.appendChild(li);
+        }
+    }
+    quizContainer.appendChild(ol);
+    quizContainer.innerHTML += playAgainBtn.join('');
+    $('#reset-score').click(function () {
+        localStorage.clear();
+        scoreboard = [];
+        quizContainer.innerHTML = '<h1>High Scores</h1><br>'+playAgainBtn.join();
+        $('#play-again').click(buildQuiz);
+    });
+    $('#play-again').click(buildQuiz);
+    
+}
