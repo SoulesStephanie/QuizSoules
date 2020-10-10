@@ -1,10 +1,10 @@
-const quizContainer = document.getElementByID('quiz');
+const quizContainer = document.getElementById('quiz');
 const scoreContainer = document.getElementById('score');
-const timeContainer = document.getElementById('timer')
-const beginbutton = document.getElementById('highscores');
+const timeContainer = document.getElementById('timer');
+const beginButton = document.getElementById('highscores');
 const scoreBoardLink = document.getElementById('answers');
-var answercontainer = document.getElementById('answers');
-var answerButtons = document.getElementsById('button-answer');
+var answerContainer = document.getElementsByClassName('answers');
+var answerButtons = document.getElementsByClassName('button-answer');
 var questionCounter = 0;
 var userScore = 0;
 var questionNumber = 0;
@@ -12,7 +12,7 @@ var userAnswer = "";
 var count;
 var answerCheck = "";
 var interval;
-var scoreBoard = [];
+var scoreBboard = [];
 constmyQuestions = [
     {
         Question: "Who said Toto, I've got a feeling we're not in Kansas anymore?",
